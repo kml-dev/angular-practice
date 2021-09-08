@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <span>My Board</span>
+  <nav class="top-nav">
+      <button mat-button class="top-btn" routerLink="/" (click)="showCompName('Home')">
+        Home
+      </button>
+      <button mat-button class="top-btn" routerLink="/board" (click)="showCompName('Board')">
+        Board
+      </button>
+  </nav>
+</mat-toolbar>
+<mat-toolbar color="accent">
+  <h1>{{ compName }}</h1>
+</mat-toolbar>
+<div class="outlet-div">
+  <router-outlet></router-outlet>
+</div>

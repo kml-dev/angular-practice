@@ -1,0 +1,39 @@
+<mat-card class="mat-card">
+  <mat-card-title>
+    <div class="row">
+      <div class="col-12">
+        <h3>게시글 상세</h3>
+      </div>
+    </div>
+  </mat-card-title>
+  <mat-card-content>
+    <hr>
+    <div class="mb-3" id="title-div">
+      <h3 *ngIf="content">{{ content.title }}</h3>
+      <br>
+      <h6 *ngIf="content">{{ content.writer }}</h6>
+      <h6 *ngIf="content">{{ content.registDate | date: 'yyyy-MM-dd' }}</h6>
+    </div>
+    <hr>
+    <div class="mb-3" id="content-div">
+      {{ content.content }}
+    </div>
+  </mat-card-content>
+  <mat-card-footer>
+    <div class="row">
+      <div class="col-9"></div>
+      <div class="col-3">
+        <button class="btn btn-primary mb-3" type="button" (click)="toUpdatePage()">
+          수정
+        </button>
+        <button class="btn btn-primary ms-3 mb-3" type="button" (click)="deleteContent()">
+          삭제
+        </button>
+        <button class="btn btn-primary ms-3 mb-3" type="button" routerLink="/board">
+          목록으로
+        </button>
+      </div>
+    </div>
+  </mat-card-footer>
+</mat-card>
+  

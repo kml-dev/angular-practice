@@ -1,0 +1,31 @@
+<mat-card class="mat-card">
+  <div class="row">
+    <div class="col-3">
+      <h3>
+        Search Keyword: 
+        <ng-container *ngIf="selectedVal">
+          ({{ selectedVal }})
+        </ng-container>
+        {{ keyword }}
+      </h3>
+    </div>
+    <div class="col-3"></div>
+    <div class="col-2">
+      <mat-form-field class="float-right" appearance="fill">
+        <mat-label>선택하세요</mat-label>
+        <mat-select #categorySelect [(ngModel)]="selectedVal">
+          <mat-option *ngFor="let option of category" [value]="option.value">
+            {{ option.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-4">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>검색어를 입력하세요</mat-label>
+        <input matInput type="text" [(ngModel)]="keyword" (ngModelChange)="keywordChange()">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </div>
+  </div>    
+</mat-card>

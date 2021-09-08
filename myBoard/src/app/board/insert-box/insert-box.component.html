@@ -1,0 +1,43 @@
+<mat-card class="mat-card">
+  <mat-card-title>
+    <div class="row">
+      <div class="col-12">
+        <h3>새글 등록</h3>
+      </div>
+    </div>
+  </mat-card-title>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-card-content>
+      <div class="mb-3">
+        <label for="title" class="form-label">제목</label>
+        <input type="text" class="form-control" id="title" formControlName="title" placeholder="제목을 입력하세요">
+      </div>
+      <div class="mb-3">
+        <label for="writer" class="form-label">작성자</label>
+        <input type="text" class="form-control" id="writer" formControlName="writer" placeholder="작성자를 입력하세요">
+      </div>
+      <div class="mb-3">
+        <label for="registDate" class="form-label">작성일</label>
+        <input type="text" class="form-control" id="registDate" formControlName="registDate" placeholder="{{ today | date: 'yyyy-MM-dd'}}" readonly>
+      </div>
+      <div class="mb-3">
+        <label for="content" class="form-label">내용</label>
+        <textarea class="form-control" id="content" rows="10" formControlName="content"></textarea>
+      </div>
+    </mat-card-content>
+    <mat-card-footer>
+      <div class="row">
+        <div class="col-10"></div>
+        <div class="col-2">
+          <button class="btn btn-primary mb-3" type="submit">
+            등록
+          </button>
+          <button class="btn btn-primary ms-4 mb-3" type="button" routerLink="../../">
+            목록으로
+          </button>
+        </div>
+      </div>
+    </mat-card-footer>
+  </form>
+</mat-card>
+  
